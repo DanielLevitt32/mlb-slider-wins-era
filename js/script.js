@@ -221,13 +221,31 @@ function chartUpdate() {
       .attr("r", 3.5)
       .attr("cx", function(d) { return x(d.Wins); })
       .attr("cy", function(d) { return y(d.Miles); })
-     /* .style("fill", function(d) {
-        if (d.Tm === "KCR") {
-          return "blue";
-        } else {
-          return "#999";
-        }*/
-      /*});*/
+     .style("fill", function(d) {
+        if (d.Wins >= "100") {
+          return "#bd0026";
+        } 
+
+        else if (d.Wins >= "90") {
+          return "#f03b20"
+        }
+
+        else if (d.Wins >= "80") {
+          return "#fd8d3c"
+        }
+
+        else if (d.Wins >= "70") {
+          return "#feb24c"
+        }
+
+        else if (d.Wins >= "60") {
+          return "#fed976"
+        }
+
+        else {
+          return "ffffb2";
+        }
+      });
 
   svg.selectAll(".name")
       .data(currYearData, function(d) {

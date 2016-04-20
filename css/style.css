@@ -18,7 +18,8 @@
 }
 
 .dot {
-  stroke: #000;
+  /*stroke: #000;*/
+  color: blue;
 }
 
 .name {
