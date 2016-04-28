@@ -218,7 +218,12 @@ function chartUpdate() {
 
     d3.selectAll(".dot")
       .transition().duration(500)
-      .attr("r", 3.5)
+      .attr("r", function(d) {
+        return Math.sqrt(d.Salary/700000);
+
+          //Math.PI);
+        //return 3;
+      })
       .attr("cx", function(d) { return x(d.Wins); })
       .attr("cy", function(d) { return y(d.Miles); })
      .style("fill", function(d) {
@@ -243,7 +248,7 @@ function chartUpdate() {
         }
 
         else {
-          return "ffffb2";
+          return "fdff1e";
         }
       });
 
