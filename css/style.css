@@ -9,7 +9,6 @@
   height: 500px;
 }
 
-
 .axis path,
 .axis line {
   fill: none;
@@ -24,3 +23,31 @@
 .name {
 	font-size: 11px;
 }
+
+/*2) Give the tooltip a css position of 'absolute' and the .chart div a position of relative.*/
+/*.chart {
+  height: 500px;
+  position: relative
+}
+
+.tt {
+    background-color: #fff;
+    padding: 8px;
+    outline: 1px solid #ccc;
+    display: none;
+    position: absolute;
+}
+
+.tt .Wins {
+	font-size: 14px;
+}
+
+.tt .ERA {
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+.tt .Salary {
+	font-size: 18px;
+	font-weight: bold;
+}*/

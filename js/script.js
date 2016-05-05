@@ -1,6 +1,12 @@
 
 /* Set the margins and widths as global variables to be referenced as needed */
-var margin = {top: 20, right: 60, bottom: 30, left: 100},
+var margin = {
+  top: 10, 
+  right: 60, 
+  bottom: 20, 
+  left: 100},
+
+
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -28,6 +34,8 @@ var yAxis = d3.svg.axis()
     .tickFormat(function(d) {
       return +d;
     });
+
+
 
  /*trendline*/   
 
@@ -96,11 +104,6 @@ d3.csv("data/mlbdata.csv", function(error, data) {
   chartUpdate();
 
 
-
-
-  /* ------------------------------- */
-  /* EXTRA SUPER ADDED BONUS LESSON */
-  /* ------------------------------- */
   /* This is the button functionality. Whenever we click a button,
   we'll update the current year and run the chartUpdate() function again */
 
@@ -118,9 +121,6 @@ d3.csv("data/mlbdata.csv", function(error, data) {
   });
 
   /* ------------------------------- */
-
-
-
 
 });
 
@@ -185,9 +185,7 @@ function chartUpdate() {
   // Now we join our data to those elements. This creates a one-to-one relationship
   // between each data point and element that represents it, in this case a dot!
       
-  /* ------------------------------- */
-  /* EXTRA SUPER ADDED BONUS LESSON */
-  /* ------------------------------- */
+
   /* We need to bind each dot to a specific team so they stay the same each upate 
   This dot should always represent this team when the data updates 
   If we DON'T DO THIS, the circles will update in the order of the data. The number of dots will stay the same,
@@ -204,25 +202,44 @@ function chartUpdate() {
     .enter().append("circle")
       // Here on out, we're just adding properties to the elements we just created.
       .attr("class", "dot")
-    
-    /* ------------------------------- */
-    /* EXTRA SUPER ADDED BONUS LESSON */
-    /* ------------------------------- */
-    /* We're separating the enter() from the attribute assignments.
-    Objects are created on enter, but only if they're new. Once they exist,
-    we can update them based on the current year's data */   
-    /* ------------------------------- */
+
+
+//3) Use the mouseover listener to get the x and y positions of the element when mousing over and pass those values to the tooltip styles to position it.
+
+/*.on("mousemove", function(d) {
+
+    var xPos = d3.mouse(this)[0] + margin.left + 10;
+    var yPos = d3.mouse(this)[1] + margin.top + 10;
+
+    $(".tt").css({
+        "left": xPos + "px",
+        "top": yPos + "px"
+    })
+})
+
+//4) Pass the data values (Ex.: date and unemployment rate) to the tooltip as html. (Notice we're using the Moment.js library here to format our dates for display):
+
+var Wins = moment(d.Wins);
+var ERA = d.ERA;
+
+//Append the values to the tooltip with some markup.
+$(".tt").html(
+  "<div class='Wins'>"+d.Wins+"</div>"+
+  "<div class='ERA'>"+d.ERA+": </div>"+
+  "<div class='Salary'>"+d.Salary+"</div>"
+)
+*/
+  
 
 
     d3.selectAll(".dot")
       .transition().duration(500)
       .attr("r", function(d) {
 
-        return Math.sqrt(d.Salary/1000000);
-        //return Math.sqrt(d.Runs*0.3);
+         return Math.sqrt(d.Salary/1000000);
 
-          //Math.PI);
-        //return 3;
+        //return Math.sqrt(d.RunsTimesMillion*0.0000001);
+        
       })
       .attr("cx", function(d) { return x(d.Wins); })
       .attr("cy", function(d) { return y(d.ERA); })
@@ -348,7 +365,175 @@ function chartUpdate() {
        if (d.Year === "2009" & d.Wins <= "86") {
         return "#fd8d3c";
 
-      };
+      }
+
+        if (d.Year === "2008" & d.Team === "CHW") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2008" & d.Team === "LAD") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2008" & d.Wins >= "90") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2008" & d.Wins <= "89") {
+        return "#fd8d3c";
+
+      }
+
+      if (d.Year === "2007" & d.Team === "CHC") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2007" & d.Team === "PHI") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2007" & d.Wins >= "90") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2007" & d.Wins <= "99") {
+        return "#fd8d3c";
+
+      }
+
+      if (d.Year === "2006" & d.Team === "STL") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2006" & d.Team === "SDP") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2006" & d.Team === "LAD") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2006" & d.Wins >= "93") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2006" & d.Wins <= "92") {
+        return "#fd8d3c";
+
+      }
+
+
+      if (d.Year === "2005" & d.Team === "HOU") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2005" & d.Team === "ATL") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2005" & d.Team === "SDP") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2005" & d.Wins >= "95") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2005" & d.Wins <= "94") {
+        return "#fd8d3c";
+
+      }
+
+      if (d.Year === "2004" & d.Wins >= "92") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2004" & d.Wins <= "91") {
+        return "#fd8d3c";
+
+      }
+
+      if (d.Year === "2003" & d.Team === "MIA") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2003" & d.Team === "MIN") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2003" & d.Team === "CHC") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2003" & d.Wins >= "95") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2003" & d.Wins <= "94") {
+        return "#fd8d3c";
+
+      }
+
+
+      if (d.Year === "2002" & d.Wins >= "94") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2002" & d.Wins <= "93") {
+        return "#fd8d3c";
+
+      }
+
+      if (d.Year === "2001" & d.Team === "ATL") {
+       return "#bd0026";
+
+      }
+
+      if (d.Year === "2001" & d.Wins >= "91") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2001" & d.Wins <= "90") {
+        return "#fd8d3c";
+
+      }
+
+
+      if (d.Year === "2000" & d.Team === "NYY") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2000" & d.Wins >= "91") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2000" & d.Wins <= "90") {
+        return "#fd8d3c";
+
+      }
 
 
       });
