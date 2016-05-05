@@ -63,21 +63,19 @@ var svg = d3.select(".chart").append("svg")
 `theData` stores our dataset globally so we can access it throughout,
 and `currYearData` stores the current year, so we can update it with our buttons */
 var theData;
-var currYear = "7-Year-Average";
+var currYear = "2015";
 /* ------------------------------- */
 
 /* This is an ajax call to load our csv-formatted data */
-d3.csv("data/mlb.csv", function(error, data) {
+d3.csv("data/mlbdata.csv", function(error, data) {
 
   /* Since we're using csv, all values are automatically strings. */
   /* So we loop through the data and cast our charting values as numbers */
   /* D3 lets us do that with `+` signs. */
   data.forEach(function(d) {
     d.Wins = +d["Wins"];
-    d.Miles = +d["Miles"];
+    d.ERA = +d["ERA"];
   });
-
-  console.log
 
   //Assign data to our global variable so we can access it throughout.
   theData = data;
@@ -86,7 +84,7 @@ d3.csv("data/mlb.csv", function(error, data) {
   /* Domains are the lowest and highest possible values in the data set. */
   /* We find these values by checking a nested property from each object in the array using `d3.extent()` */
   x.domain(d3.extent(theData, function(d) { return d.Wins; })).nice();
-  y.domain(d3.extent(theData, function(d) { return d.Miles; })).nice();
+  y.domain(d3.extent(theData, function(d) { return d.ERA; })).nice();
 
 
   //Draw the axis for the charts.
@@ -152,7 +150,7 @@ function chartInit() {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Miles Traveled")
+      .text("Earned Run Average")
 
       
 }
@@ -197,7 +195,7 @@ function chartUpdate() {
   /* ------------------------------- */
 
       .data(currYearData, function(d) {
-        return d.Tm;
+        return d.Team;
       })
 
   // ENTER 
@@ -219,53 +217,156 @@ function chartUpdate() {
     d3.selectAll(".dot")
       .transition().duration(500)
       .attr("r", function(d) {
-        return Math.sqrt(d.Salary/700000);
+
+        return Math.sqrt(d.Salary/1000000);
+        //return Math.sqrt(d.Runs*0.3);
 
           //Math.PI);
         //return 3;
       })
       .attr("cx", function(d) { return x(d.Wins); })
-      .attr("cy", function(d) { return y(d.Miles); })
+      .attr("cy", function(d) { return y(d.ERA); })
      .style("fill", function(d) {
-        if (d.Wins >= "100") {
-          return "#bd0026";
-        } 
+        
+    
 
-        else if (d.Wins >= "90") {
-          return "#f03b20"
-        }
+ if (d.Year === "2015" & d.Wins >= "86") {
+        return "#bd0026";
 
-        else if (d.Wins >= "80") {
-          return "#fd8d3c"
-        }
+      }
 
-        else if (d.Wins >= "70") {
-          return "#feb24c"
-        }
+      if (d.Year === "2015" & d.Wins <= "85") {
+        return "#fd8d3c";
 
-        else if (d.Wins >= "60") {
-          return "#fed976"
-        }
+      }
 
-        else {
-          return "fdff1e";
-        }
+      if (d.Year === "2014" & d.Wins >= "88") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2014" & d.Wins <= "87") {
+       return "#fd8d3c";
+
+      }
+
+      if (d.Year === "2013" & d.Team === "CIN") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2013" & d.Team === "TEX") {
+        return "#fd8d3c";
+
+      }
+
+      if (d.Year === "2013" & d.Wins >= "92") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2013" & d.Wins <= "89") {
+        return "#fd8d3c";
+
+      }
+
+
+      if (d.Year === "2012" & d.Team === "TBR") {
+        return "#fd8d3c";
+
+      }
+
+      if (d.Year === "2012" & d.Team === "LAA") {
+        return "#fd8d3c";
+
+      }
+
+      if (d.Year === "2012" & d.Wins >= "88") {
+        return "#bd0026";
+
+      }
+
+       if (d.Year === "2012" & d.Wins <= "87") {
+        return "#fd8d3c";
+
+      }
+
+
+      if (d.Year === "2011" & d.Team === "BOS") {
+        return "#fd8d3c";
+
+      }
+
+      if (d.Year === "2011" & d.Wins >= "90") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2011" & d.Wins <= "89") {
+        return "#fd8d3c";
+
+      }
+
+
+      if (d.Year === "2010" & d.Team === "SDP") {
+        return "#fd8d3c";
+
+      }
+
+      if (d.Year === "2010" & d.Wins >= "90") {
+        return "#bd0026";
+
+      }
+
+      if (d.Year === "2010" & d.Wins <= "89") {
+        return "#fd8d3c";
+
+      }
+
+
+      if (d.Year === "2009" & d.Team === "TEX") {
+        return "#fd8d3c";
+
+      }
+
+
+      if (d.Year === "2009" & d.Team === "SFG") {
+        return "#fd8d3c";
+
+      }
+
+      if (d.Year === "2009" & d.Team === "MIA") {
+        return "#fd8d3c";
+
+      }
+
+      if (d.Year === "2009" & d.Wins >= "87") {
+        return "#bd0026";
+
+      }
+
+       if (d.Year === "2009" & d.Wins <= "86") {
+        return "#fd8d3c";
+
+      };
+
+
       });
 
   svg.selectAll(".name")
       .data(currYearData, function(d) {
-        return d.Tm;
+        return d.Team;
       })
     .enter().append("text")
       .attr("class", "name")
       .text(function(d) {
-          return d.Tm;
+          return d.Team;
         })
   
   d3.selectAll(".name")
       .transition().duration(500)
       .attr("x", function(d) { return x(d.Wins) + 5; })
-      .attr("y", function(d) { return y(d.Miles); })
+      .attr("y", function(d) { return y(d.ERA); })
     }
         
 
