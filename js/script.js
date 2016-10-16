@@ -155,9 +155,6 @@ function chartInit() {
       
 }
 
-
-
-
 function chartUpdate() {
 
   // d3.nest lets us break our data into 4 separate years.
@@ -170,7 +167,6 @@ function chartUpdate() {
   //Now we can target a single year of the data.
   //We'll use the current year (2015 is default, but will update when we click the buttons)
   var currYearData = nestedData[currYear];
-
 
 
   // This is where the magic happens, where we actually create elements on the page
@@ -206,7 +202,7 @@ function chartUpdate() {
 
 //3) Use the mouseover listener to get the x and y positions of the element when mousing over and pass those values to the tooltip styles to position it.
 
-/*.on("mousemove", function(d) {
+.on("mousemove", function(d) {
 
     var xPos = d3.mouse(this)[0] + margin.left + 10;
     var yPos = d3.mouse(this)[1] + margin.top + 10;
@@ -218,18 +214,16 @@ function chartUpdate() {
 })
 
 //4) Pass the data values (Ex.: date and unemployment rate) to the tooltip as html. (Notice we're using the Moment.js library here to format our dates for display):
-
-var Wins = moment(d.Wins);
-var ERA = d.ERA;
+  
+var Wins = Wins;
+var ERA = ERA;
 
 //Append the values to the tooltip with some markup.
 $(".tt").html(
-  "<div class='Wins'>"+d.Wins+"</div>"+
-  "<div class='ERA'>"+d.ERA+": </div>"+
-  "<div class='Salary'>"+d.Salary+"</div>"
+  "<div class='Wins'>"+Wins+"</div>"+
+  "<div class='ERA'>"+ERA+": </div>"
+  //"<div class='Salary'>"+d.Salary+"</div>"
 )
-*/
-  
 
 
     d3.selectAll(".dot")
@@ -245,296 +239,16 @@ $(".tt").html(
       .attr("cy", function(d) { return y(d.ERA); })
      .style("fill", function(d) {
         
-    
 
- if (d.Year === "2015" & d.Wins >= "86") {
+      if (d.Playoffs === "yes") {
         return "#bd0026";
 
       }
 
-      if (d.Year === "2015" & d.Wins <= "85") {
+      if (d.Playoffs === "no") {
         return "#fd8d3c";
 
       }
-
-      if (d.Year === "2014" & d.Wins >= "88") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2014" & d.Wins <= "87") {
-       return "#fd8d3c";
-
-      }
-
-      if (d.Year === "2013" & d.Team === "CIN") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2013" & d.Team === "TEX") {
-        return "#fd8d3c";
-
-      }
-
-      if (d.Year === "2013" & d.Wins >= "92") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2013" & d.Wins <= "89") {
-        return "#fd8d3c";
-
-      }
-
-
-      if (d.Year === "2012" & d.Team === "TBR") {
-        return "#fd8d3c";
-
-      }
-
-      if (d.Year === "2012" & d.Team === "LAA") {
-        return "#fd8d3c";
-
-      }
-
-      if (d.Year === "2012" & d.Wins >= "88") {
-        return "#bd0026";
-
-      }
-
-       if (d.Year === "2012" & d.Wins <= "87") {
-        return "#fd8d3c";
-
-      }
-
-
-      if (d.Year === "2011" & d.Team === "BOS") {
-        return "#fd8d3c";
-
-      }
-
-      if (d.Year === "2011" & d.Wins >= "90") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2011" & d.Wins <= "89") {
-        return "#fd8d3c";
-
-      }
-
-
-      if (d.Year === "2010" & d.Team === "SDP") {
-        return "#fd8d3c";
-
-      }
-
-      if (d.Year === "2010" & d.Wins >= "90") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2010" & d.Wins <= "89") {
-        return "#fd8d3c";
-
-      }
-
-
-      if (d.Year === "2009" & d.Team === "TEX") {
-        return "#fd8d3c";
-
-      }
-
-
-      if (d.Year === "2009" & d.Team === "SFG") {
-        return "#fd8d3c";
-
-      }
-
-      if (d.Year === "2009" & d.Team === "MIA") {
-        return "#fd8d3c";
-
-      }
-
-      if (d.Year === "2009" & d.Wins >= "87") {
-        return "#bd0026";
-
-      }
-
-       if (d.Year === "2009" & d.Wins <= "86") {
-        return "#fd8d3c";
-
-      }
-
-        if (d.Year === "2008" & d.Team === "CHW") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2008" & d.Team === "LAD") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2008" & d.Wins >= "90") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2008" & d.Wins <= "89") {
-        return "#fd8d3c";
-
-      }
-
-      if (d.Year === "2007" & d.Team === "CHC") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2007" & d.Team === "PHI") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2007" & d.Wins >= "90") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2007" & d.Wins <= "99") {
-        return "#fd8d3c";
-
-      }
-
-      if (d.Year === "2006" & d.Team === "STL") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2006" & d.Team === "SDP") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2006" & d.Team === "LAD") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2006" & d.Wins >= "93") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2006" & d.Wins <= "92") {
-        return "#fd8d3c";
-
-      }
-
-
-      if (d.Year === "2005" & d.Team === "HOU") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2005" & d.Team === "ATL") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2005" & d.Team === "SDP") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2005" & d.Wins >= "95") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2005" & d.Wins <= "94") {
-        return "#fd8d3c";
-
-      }
-
-      if (d.Year === "2004" & d.Wins >= "92") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2004" & d.Wins <= "91") {
-        return "#fd8d3c";
-
-      }
-
-      if (d.Year === "2003" & d.Team === "MIA") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2003" & d.Team === "MIN") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2003" & d.Team === "CHC") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2003" & d.Wins >= "95") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2003" & d.Wins <= "94") {
-        return "#fd8d3c";
-
-      }
-
-
-      if (d.Year === "2002" & d.Wins >= "94") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2002" & d.Wins <= "93") {
-        return "#fd8d3c";
-
-      }
-
-      if (d.Year === "2001" & d.Team === "ATL") {
-       return "#bd0026";
-
-      }
-
-      if (d.Year === "2001" & d.Wins >= "91") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2001" & d.Wins <= "90") {
-        return "#fd8d3c";
-
-      }
-
-
-      if (d.Year === "2000" & d.Team === "NYY") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2000" & d.Wins >= "91") {
-        return "#bd0026";
-
-      }
-
-      if (d.Year === "2000" & d.Wins <= "90") {
-        return "#fd8d3c";
-
-      }
-
 
       });
 
@@ -554,7 +268,3 @@ $(".tt").html(
       .attr("y", function(d) { return y(d.ERA); })
     }
         
-
-
-
-
