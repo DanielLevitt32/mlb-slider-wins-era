@@ -213,7 +213,7 @@ function chartUpdate() {
     })
 })
 
-//4) Pass the data values (Ex.: date and unemployment rate) to the tooltip as html. (Notice we're using the Moment.js library here to format our dates for display):
+//4) Pass the data values to the tooltip as html. (Notice we're using the Moment.js library here to format our dates for display):
   
 var Wins = Wins;
 var ERA = ERA;
@@ -221,18 +221,15 @@ var ERA = ERA;
 //Append the values to the tooltip with some markup.
 $(".tt").html(
   "<div class='Wins'>"+Wins+"</div>"+
-  "<div class='ERA'>"+ERA+": </div>"
+  "<div class='ERA'>"+ERA+"</div>"
   //"<div class='Salary'>"+d.Salary+"</div>"
 )
-
 
     d3.selectAll(".dot")
       .transition().duration(500)
       .attr("r", function(d) {
 
          return Math.sqrt(d.Salary/1000000);
-
-        //return Math.sqrt(d.RunsTimesMillion*0.0000001);
         
       })
       .attr("cx", function(d) { return x(d.Wins); })
@@ -259,7 +256,7 @@ $(".tt").html(
     .enter().append("text")
       .attr("class", "name")
       .text(function(d) {
-          return d.Team;
+        return d.Team;
         })
   
   d3.selectAll(".name")
