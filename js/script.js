@@ -202,28 +202,28 @@ function chartUpdate() {
 
 //3) Use the mouseover listener to get the x and y positions of the element when mousing over and pass those values to the tooltip styles to position it.
 
-.on("mousemove", function(d) {
+//.on("mousemove", function(d) {
 
-    var xPos = d3.mouse(this)[0] + margin.left + 10;
-    var yPos = d3.mouse(this)[1] + margin.top + 10;
+    //var xPos = d3.mouse(this)[0] + margin.left + 10;
+    //var yPos = d3.mouse(this)[1] + margin.top + 10;
 
-    $(".tt").css({
-        "left": xPos + "px",
-        "top": yPos + "px"
-    })
-})
+//     $(".tt").css({
+//         "left": xPos + "px",
+//         "top": yPos + "px"
+//     })
+// })
 
 //4) Pass the data values to the tooltip as html. (Notice we're using the Moment.js library here to format our dates for display):
   
-var Wins = Wins;
-var ERA = ERA;
+// var Wins = Wins;
+// var ERA = ERA;
 
 //Append the values to the tooltip with some markup.
-$(".tt").html(
-  "<div class='Wins'>"+Wins+"</div>"+
-  "<div class='ERA'>"+ERA+"</div>"
-  //"<div class='Salary'>"+d.Salary+"</div>"
-)
+// $(".tt").html(
+//   "<div class='Wins'>"+Wins+"</div>"+
+//   "<div class='ERA'>"+ERA+"</div>"
+//   //"<div class='Salary'>"+d.Salary+"</div>"
+// )
 
     d3.selectAll(".dot")
       .transition().duration(500)
