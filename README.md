@@ -7,3 +7,5 @@ Since 2000, 88 percent of teams that made the playoffs had an ERA below the leag
 In the past four seasons, the number of playoff teams with run totals in the league's upper half dropped to 73 percent, whereas playoff teams with ERAs below the league average soared to 90 percent. In other words, nine of out every ten playoff teams has one of the better ERAs in the league.
 
 Pitching wins ball games, folks.
+
+<img src="images/mlb-slider.jpg" alt="ERA-wins-baseball-games link">

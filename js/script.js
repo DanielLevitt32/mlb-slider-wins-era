@@ -21,7 +21,7 @@ var y = d3.scale.linear()
     .range([height, 0]);
 
 /* Axis are automated in D3, so you don't have to draw and place numbers and hash marks */
-/* We all the svg.axis() function and pass the scales as arguments. */
+/* We call the svg.axis() function and pass the scales as arguments. */
 var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom");
