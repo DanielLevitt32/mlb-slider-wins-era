@@ -1,109 +1,109 @@
 <!doctype html>
 
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
-    <title>ERA Wins Baseball Games</title>
-
-    
+<title>ERA Wins Baseball Games</title>
 
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="css/style.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<!-- Latest compiled and minified Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="css/style.css"/>
 
 
 </head>
 
 <body class="">
 
-    <div id="main-wrapper" class="">
-        <div id="main-content" class="container">
-            <header class="row">
-                <div class="social-links col-md-12"></div>
-                <div class="col-md-12">
+<div id="main-wrapper" class="">
+<div id="main-content" class="container">
+<header class="row">
+<div class="social-links col-md-12"></div>
+<div class="col-md-12">
 
-                    <h1>ERA Wins Baseball Games (more often than not)</h1>
-                    
-                    <div class="byline">By <a href="https://twitter.com/daniellevitt32" target="_blank">Daniel Levitt</a></div>
-                    <p></p>
-                    <div class="meta">
-                        Published May 5, 2016
-                    </div>
-                    <!--<p></p>
-                    <p>Front office executives around the league get paid vast sums of money to decide on the direction of their ball club, but are they making it harder than it should be?</p>
-                    <p>Data from the past sixteen MLB seasons shows that there's strong correlation between the number of games a team wins and it's ERA.</p>
-                    <p>Since 2000, 88 percent of teams that made the playoffs had an ERA below the league average. In comparison, 77 percent of those teams scored more runs than the league average. You're probably thinking there's not a whole lot in it. But since former MLB Commissioner Bud Selig added a second wild card to the American and National Leagues for the 2012 season, those figures have gone in opposite directions.</p>
-                    <p>In the past four seasons, the number of playoff teams with run totals in the league's upper half dropped to 73 percent, whereas playoff teams with ERAs below the league average soared to 90 percent. In other words, nine of out every ten playoff teams has one of the better ERAs in the league.</p>
-                    <p>Pitching wins ball games, folks.</p>-->
+<h1>ERA Wins Baseball Games (more often than not)</h1>
 
-                
-                </div>
-            </header>
-
-            <section class="row">
-
-            <div class="btn-group">
-                <button class="btn btn-default" val="2000">2000</button>
-                <button class="btn btn-default" val="2001">2001</button>
-                <button class="btn btn-default" val="2002">2002</button>
-                <button class="btn btn-default" val="2003">2003</button>
-                <button class="btn btn-default" val="2004">2004</button>
-                <button class="btn btn-default" val="2005">2005</button>
-                <button class="btn btn-default" val="2006">2006</button>
-                <button class="btn btn-default" val="2007">2007</button>
-                <button class="btn btn-default" val="2008">2008</button>
-                <button class="btn btn-default" val="2009">2009</button>
-                <button class="btn btn-default" val="2010">2010</button>
-                <button class="btn btn-default" val="2011">2011</button>
-                <button class="btn btn-default" val="2012">2012</button>
-                <button class="btn btn-default" val="2013">2013</button>
-                <button class="btn btn-default" val="2014">2014</button>
-                <button class="btn btn-default active" val="2015">2015</button>
-            </div>
-
-            <div class="col-md-12 chart">
-                <div class="tt"></div>
-            </div>
-
-            <!-- **************************** -->
-            <!-- EXTRA SUPER ADDED BONUS LESSON -->
-            <!-- **************************** -->
-
-            <!-- This is a group of buttons for selecting which year's data we want to show.
-            The buttons follow the Bootstrap `btn-group` css conventions -->
-            
-
-            <!-- **************************** -->
-
-            <!--1) Add a tooltip div inside of your .chart container.-->
-            
-                <!-- This is where we'll draw our svg and chart elements-->
-            </section>
-
-            <footer>
-            <p></p>
-            <p>Size of circle represents team salary. <font color="red">Red</font> = playoffs. <font color="orange">Orange</font> = no playoffs.</p>
-                <div id="source-line"> <a href="http://espn.go.com/mlb/standings" target="_blank">Source: ESPN</a></p></a></div>
-            </footer>
-        </div>
-    </div>
+<div class="byline">By <a href="https://twitter.com/daniellevitt32" target="_blank">Daniel Levitt</a></div>
+<p></p>
+<div class="meta">
+Published May 5, 2016
+</div>
+<!--<p></p>
+<p>Front office executives around the league get paid vast sums of money to decide on the direction of their ball club, but are they making it harder than it should be?</p>
+<p>Data from the past sixteen MLB seasons shows that there's strong correlation between the number of games a team wins and it's ERA.</p>
+<p>Since 2000, 88 percent of teams that made the playoffs had an ERA below the league average. In comparison, 77 percent of those teams scored more runs than the league average. You're probably thinking there's not a whole lot in it. But since former MLB Commissioner Bud Selig added a second wild card to the American and National Leagues for the 2012 season, those figures have gone in opposite directions.</p>
+<p>In the past four seasons, the number of playoff teams with run totals in the league's upper half dropped to 73 percent, whereas playoff teams with ERAs below the league average soared to 90 percent. In other words, nine of out every ten playoff teams has one of the better ERAs in the league.</p>
+<p>Pitching wins ball games, folks.</p>-->
 
 
+</div>
+</header>
+
+<section class="row">
+
+<div class="btn-group">
+<button class="btn btn-default" val="2000">2000</button>
+<button class="btn btn-default" val="2001">2001</button>
+<button class="btn btn-default" val="2002">2002</button>
+<button class="btn btn-default" val="2003">2003</button>
+<button class="btn btn-default" val="2004">2004</button>
+<button class="btn btn-default" val="2005">2005</button>
+<button class="btn btn-default" val="2006">2006</button>
+<button class="btn btn-default" val="2007">2007</button>
+<button class="btn btn-default" val="2008">2008</button>
+<button class="btn btn-default" val="2009">2009</button>
+<button class="btn btn-default" val="2010">2010</button>
+<button class="btn btn-default" val="2011">2011</button>
+<button class="btn btn-default" val="2012">2012</button>
+<button class="btn btn-default" val="2013">2013</button>
+<button class="btn btn-default" val="2014">2014</button>
+<button class="btn btn-default active" val="2015">2015</button>
+</div>
+
+<div class="col-md-12 chart">
+<div class="tt"></div>
+</div>
+
+<!-- **************************** -->
+<!-- EXTRA SUPER ADDED BONUS LESSON -->
+<!-- **************************** -->
+
+<!-- This is a group of buttons for selecting which year's data we want to show.
+The buttons follow the Bootstrap `btn-group` css conventions -->
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<!-- **************************** -->
 
-        <script src="js/moment.min.js" charset="utf-8"></script>
+<!--1) Add a tooltip div inside of your .chart container.-->
 
-    <!-- Latest compiled and minified Bootstrap JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
+<!-- This is where we'll draw our svg and chart elements-->
+</section>
+
+<footer>
+<p></p>
+<p>Size of circle represents team salary. <font color="red">Red</font> = playoffs. <font color="orange">Orange</font> = no playoffs.</p>
+<div id="source-line"> <a href="http://espn.go.com/mlb/standings" target="_blank">Source: ESPN</a></p></a></div>
+</footer>
+</div>
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+<script src="js/moment.min.js" charset="utf-8"></script>
+
+<!-- Latest compiled and minified Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
