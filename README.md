@@ -45,6 +45,64 @@ Published May 5, 2016
 </div>
 </header>
 
+<style>
+
+.btn-group {
+    margin: 15px;
+}
+
+/*.chart {
+  height: 500px;
+}*/
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+/*.dot {
+  color: blue;
+}*/
+
+.name {
+    font-size: 11px;
+}
+
+/*2) Give the tooltip a css position of 'absolute' and the .chart div a position of relative.*/
+.chart {
+  height: 500px;
+  position: relative
+}
+
+.tt {
+    background-color: #fff;
+    padding: 8px;
+    outline: 1px solid #ccc;
+    position: absolute;
+
+}
+
+.tt Wins {
+  font-size: 14px;
+}
+
+.tt ERA {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.tt Salary {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+
+
+</style>
+
 <section class="row">
 
 <div class="btn-group">
