@@ -1,1 +1,1 @@
-<img src="img/mlb-slider.png">
+<img src="/Users/daniellevitt/Documents/Sites/daniellevitt32.github.io/img/mlb-slider.png">
